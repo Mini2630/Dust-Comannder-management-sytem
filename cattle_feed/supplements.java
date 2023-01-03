@@ -1,6 +1,7 @@
 package cattle_feed;
 
 public class supplements {
+<<<<<<< HEAD
     private int feed;
     private String name;
 
@@ -13,3 +14,6 @@ public class supplements {
     }
 }
 
+=======
+}
+>>>>>>> origin/main

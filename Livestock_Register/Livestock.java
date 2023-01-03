@@ -1,5 +1,6 @@
 package Livestock_Register;
 
+<<<<<<< HEAD
 /**
  * This class is meant to keep track of the livestock.
  * ID, age, gender, medical history, how many births*/
@@ -64,4 +65,7 @@ public class Livestock {
 
     public void add(Livestock livestock) {
     }
+=======
+public class Livestock {
+>>>>>>> origin/main
 }

@@ -1,6 +1,7 @@
 package cattle_feed;
 
 public class feed {
+<<<<<<< HEAD
     private int feed;
     private String name;
 
@@ -11,4 +12,6 @@ public class feed {
     public String getName() {
         return name;
     }
+=======
+>>>>>>> origin/main
 }
