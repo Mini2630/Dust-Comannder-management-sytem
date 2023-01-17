@@ -1,0 +1,15 @@
+Make Lineage the parent class as every livestock has to come from a certain lineage. (Done)
+
+The Livestock class will be a subclass of Lineage and will have all the information we need on the livestock.
+Therefor we won't need to have the Lineage list in the DustCommanderFarm class as Livestock 
+will have the information we need regarding that livestock and lineage. (Done)
+
+The main reason I used a hashMap is because when trying to find a cattle by ID it is easier to find
+with a hashMap because of built-in functions and this will also allows to when if we find it or not. (Done)
+
+Since the DustCommanderFarm will contain a hashMap that points to the Livestock class we will now just have to query
+the hashMap by trying to get the id of the Livestock if we want information on just one cattle or use the Lineage id to get
+all the the information regarding cattle of a certain lineage. (Done)
+
+We do not need the getters and setters in the DustCommanderFarm class as we already have them in the Livestock class.
+

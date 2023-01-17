@@ -1,10 +1,10 @@
 package Livestock_Register;
 
-
 /**
  * This class is meant to keep track of the livestock.
- * ID, age, gender, medical history, how many births*/
-public class Livestock {
+ * ID, age, gender, medical history, how many births.
+ */
+public class Livestock extends Lineage {
 
     private int id;
     private int age;
@@ -14,56 +14,65 @@ public class Livestock {
 
     /**
      * the constructor is used to initialize the new livestock
+     * 
      * @param id
-     * @param age
-     * */
-    public Livestock(int id, int age){
-        this.immunizations=0;
-        this.gender = "";
-        this.births = 0;
+     * @param lineageID
+     * @param lineageAge
+     * @param immunizations
+     * @param gender
+     */
+    public Livestock(int id, int lineageID, int lineageAge, int immunizations, String gender) {
+        super(lineageID, lineageAge);
+        this.immunizations = immunizations;
+        this.gender = gender;
         this.id = id;
-        this.age = age;
+        this.births = 0;
+        this.age = 0;
     }
 
     public void setAge(int age) {
         this.age = age;
     }
 
-    /***?
-     *
+    /***
      * @param immunized
      */
     public void updateImmunizations(int immunized) {
-        immunizations += immunized;
+        this.immunizations += immunized;
     }
 
     /**
-     * @param birth */
+     * @param birth
+     */
     public void updateBirths(int birth) {
-        births += birth;
+        this.births += birth;
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getGender() {
-        return gender;
+        return this.gender;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public int getImmunizations() {
-        return immunizations;
+        return this.immunizations;
     }
 
     public int getBirths() {
-        return births;
+        return this.births;
     }
 
-    public void add(Livestock livestock) {
-    }
+    @Override
+    public String toString() {
+        return "*".repeat(20) + "\nDetails for livestock: " + this.getId() + "\nGender: " + this.getGender() + "\nAge: " + this.getAge() 
+        + "\nImmunizations: " + this.getImmunizations() +"\nBirths: " + this.getBirths() + "\nLineage: " + this.getLineageID() + "\n" + "*".repeat(20);
 
+        // return super.toString();
+    }
 }

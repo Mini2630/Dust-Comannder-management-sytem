@@ -6,11 +6,19 @@ public class feed {
     private String name;
 
     public int getFeed() {
-        return feed;
+        return this.feed;
     }
 
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public void setFeed(int feed){
+        this.feed = feed;
+    }
+
+    public void setName(String name){
+        this.name = name;
     }
 
 }

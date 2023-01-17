@@ -1,9 +1,9 @@
 package Livestock_Register;
 
-import Livestock_Register.Livestock;
+public class Lineage{
 
-public class Lineage extends Livestock {
-
+    private int lineageID;
+    private int age;
 
     /**
      * the constructor is used to initialize the new livestock
@@ -12,7 +12,16 @@ public class Lineage extends Livestock {
      * @param age
      */
     public Lineage(int id, int age) {
-        super(id, age);
+        this.lineageID = id;
+        this.age = age;
+    }
+
+    public int getLineageID() {
+        return lineageID;
+    }
+
+    public int getAge() {
+        return age;
     }
 
 }

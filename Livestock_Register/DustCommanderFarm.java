@@ -1,67 +1,48 @@
 package Livestock_Register;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 public class DustCommanderFarm {
 
-    private List<Livestock> livestock;
-    private List<Lineage> lineage;
-    private int immunizations;
-    private int births;
-
-    /**
-     *
-     * @param livestock
-     * @param lineage
-     */
-
-    public DustCommanderFarm(List<Livestock> livestock, List<Lineage> lineage) {
-        this.livestock = livestock;
-        this.lineage = lineage;
-        immunizations = 0;
-        births = 0;
+    private HashMap<Integer, Livestock> livestockInfo;
+    
+    public DustCommanderFarm(){
+        livestockInfo = new HashMap<>();
     }
 
+    /**
+     * @return Collection of all livestock
+     */
+    public Collection<Livestock> getLivestock() {
+        return livestockInfo.values();
+    }
 
-    public List<Livestock> getLivestock() {
-        return livestock;
+    /**
+     * @param livestockId
+     * @return Livestock Object found with matching ID else it will return null
+     */
+    public Livestock getLivestockById(int livestockId) {
+        return livestockInfo.containsKey(livestockId) ? livestockInfo.get(livestockId) : null;
     }
 
     /**
      * adds the livestock
-     * @param livestock is added
+     * @param livestock to be added
      */
     public void addLivestock(Livestock livestock){
-        livestock.add(livestock);
-    }
-
-    public List<Lineage> getLineage() {
-        return lineage;
+        this.livestockInfo.put(livestock.getId(), livestock);
     }
 
     /**
-     * adds tp livestock lineage
-     * @param lineage adds to the lineage class
+     * @param lineageID
+     * @return a list of livestock that have the same lineage
      */
-    public void addLineage(Lineage lineage) {
-        lineage.add(lineage);
+    public List<Livestock> getLineage(int lineageID) {
+        return this.livestockInfo.values().stream().filter(LiveStock -> LiveStock.getLineageID() == lineageID).toList();
     }
 
-    public int getImmunizations() {
-        return immunizations;
-    }
-
-    public void updateImmunizations(int immunized) {
-        immunizations += immunized;
-    }
-
-    public int getBirths() {
-        return births;
-    }
-
-    public void updateBirths(int delivery) {
-        births += delivery;
-    }
 }
 
 
